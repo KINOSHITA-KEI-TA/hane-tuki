@@ -5,7 +5,7 @@
     = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
       %h3 投稿フォーム
       = form.text_field :text, placeholder: "text" , rows: "10"
-      = form.file_field :image, placeholder: "Image Url"
+      = form.file_field :image,class:'img_field',placeholder: "Image Url"
       -# = from.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
       = form.submit "投稿"
 .Image
