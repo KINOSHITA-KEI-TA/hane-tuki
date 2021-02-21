@@ -1,0 +1,22 @@
+.contents
+.Out-event
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
+  .container
+    = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
+      %h3 投稿フォーム
+      = form.text_field :text, placeholder: "text" , rows: "10"
+      = form.file_field :image, placeholder: "Image Url"
+      -# = from.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+      = form.submit "投稿"
+.Image
+  - @messages.each do |message|
+    .Image__image-place
+      .image-time
+        = l message.created_at
+      .image
+        = image_tag message.image.url
+      .text
+        = message.text
+      - if user_signed_in? && current_user.id == message.user_id
+        .delete-image
+          = link_to '削除', message, method: :delete

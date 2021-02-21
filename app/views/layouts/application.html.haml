@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title HaneTuki
+    = csrf_meta_tags
+    = csp_meta_tag
+    = javascript_include_tag 'application'    
+    -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload’
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = yield
