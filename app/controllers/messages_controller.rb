@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.all.page(params[:page]).per(10)
+    @user = User.all
   end
 
   def new
