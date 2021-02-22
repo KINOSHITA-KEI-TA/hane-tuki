@@ -1,3 +1,37 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.Name{
+  margin: 10px 0px 0px 10px;
+}
+.Content{
+  margin: 8px 15px 5px 0px;
+  text-align: right;
+}
+.Post{
+  text-align: center;
+  .Post-title{
+    margin: 5px;
+  }
+  .text_field{
+    padding: 5px;
+    width: 30%;
+  }
+  .img_field{
+  display: none;
+  }
+  .Form-box{
+    padding: 5px;
+  }
+}
+.Main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .time{
+    margin: 30px 0px 5px 0px;
+  }
+}
+.Footer{
+  text-align: center;
+  border-top: solid 2px black;
+  margin: 10px 0px;
+  padding: 5px 0px 0px 0px;
+}

@@ -1,13 +1,17 @@
 .Name
+  ようこそ！
   = current_user.name
+  さんログイン中
 .Content
   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
-  .Post
-    = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
-      %h3 投稿フォーム
-      = form.text_field :text, placeholder: "text" , rows: "10"
+.Post
+  = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
+    %h3.Post-title 投稿フォーム
+    = form.text_field :text,class:'text_field', placeholder: "タイトル" , rows: "10"
+    = form.label :image, class: 'Form-box'do
+      = icon('fas fa-camera', class: 'camera')
       = form.file_field :image,class:'img_field',placeholder: "Image Url"
-      = form.submit "投稿"
+    = form.submit "投稿"
 .Main
   - @messages.each do |message|
     .Mani__image-place
@@ -15,11 +19,13 @@
         = l message.created_at
       .image
         = image_tag message.image.url
-      .text
-        = message.text
+      .text-main
+        .text
+          = message.text
       - if user_signed_in? && current_user.id == message.user_id
         .delete-image
           = link_to '削除', message, method: :delete
 .Pagebase 
   = paginate @messages
 .Footer
+  Copyright YOU ARE 2020.
