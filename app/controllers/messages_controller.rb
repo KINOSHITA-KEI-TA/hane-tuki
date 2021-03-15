@@ -13,6 +13,12 @@ class MessagesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @user = User.find(params[:id])
+    @message = Message.where(user_id: @user.id).all.page(params[:page]).per(10)
+    # @messages = Message.all.page(params[:page]).per(10)
+  end
+
   def destroy
     @message = Message.find(params[:id])
     if @message.destroy

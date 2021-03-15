@@ -1,0 +1,45 @@
+.Header 
+  .Name
+    ようこそ！
+    = current_user.name
+    さんログイン中
+  .Content
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
+  .My-content 
+    = link_to "TOP", messages_path
+.Main
+  - @message.each do |message|
+    .Mani__image-place
+      .time
+        = l message.created_at
+      .image
+        = image_tag message.image.url
+      .text-main
+        .text
+          = message.text
+      - if user_signed_in? && current_user.id == message.user_id
+        .delete-image
+          = link_to '削除', message, method: :delete
+.Pagebase 
+  = paginate @message
+.Footer
+  Copyright YOU ARE 2020.
+
+
+
+-#  - @messages.user.each do |message|
+-#     .Mani__image-place
+-#       .time
+-#         = l message.created_at
+-#       .image
+-#         = image_tag message.image.url
+-#       .text-main
+-#         .text
+-#           = message.text
+-#       - if user_signed_in? && current_user.id == message.user_id
+-#         .delete-image
+-#           = link_to '削除', message, method: :delete
+-# .Pagebase 
+-#   = paginate @messages
+-# .Footer
+-#   Copyright YOU ARE 2020.

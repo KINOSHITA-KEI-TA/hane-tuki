@@ -1,9 +1,12 @@
-.Name
-  ようこそ！
-  = current_user.name
-  さんログイン中
-.Content
-  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
+.Header 
+  .Name
+    ようこそ！
+    = current_user.name
+    さんログイン中
+  .Content
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
+  .My-content 
+    = link_to "MY PAGE", message_path(current_user.id)
 .Post
   = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
     %h3.Post-title 投稿フォーム
