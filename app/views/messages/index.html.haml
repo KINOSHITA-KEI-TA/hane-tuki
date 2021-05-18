@@ -22,6 +22,8 @@
         = l message.created_at
       .image
         = image_tag message.image.url
+      .user-name
+        = current_user.name
       .text-main
         .text
           = message.text

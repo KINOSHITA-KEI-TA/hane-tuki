@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
-    @messages = Message.all.page(params[:page]).per(10)
+    @messages = Message.all.page(params[:page]).per(10).order(created_at: :desc)
     @user = User.all
   end
 
