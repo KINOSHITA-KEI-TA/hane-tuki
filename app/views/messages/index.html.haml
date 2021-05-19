@@ -1,12 +1,15 @@
+%Header.Main-Header
+  = image_tag '/assets/7.jpg', alt: '説明画像', height: '120px', width: '40%', class: 'image-first' 
+  .Head-content
+    .My-content 
+      = link_to "MY PAGE", message_path(current_user.id)
+    .Logout
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
 .Header 
   .Name
-    ようこそ！
+    Welcome!
     = current_user.name
     さんログイン中
-  .Content
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
-  .My-content 
-    = link_to "MY PAGE", message_path(current_user.id)
 .Post
   = form_with(model: @message,  html: {id: "Form-c" },local: true) do |form|
     %h3.Post-title 投稿フォーム
