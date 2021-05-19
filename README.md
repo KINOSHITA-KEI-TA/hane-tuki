@@ -1,24 +1,61 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Name：
+HaNe-TuKi
+====
 
-Things you may want to cover:
+Overview
 
-* Ruby version
 
-* System dependencies
+## 概要
+<ul>
+  <li>画像保管アプリ</li>
+</ul>
 
-* Configuration
+## 制作意図
+・画像を飾るためのアプリ
+・アプリ内の美術館を実現してみたいと思ったから
 
-* Database creation
 
-* Database initialization
+## 工夫したところ
+<ul>
+  <li>デザイン思索中</li>
+</ul>
 
-* How to run the test suite
+## 開発環境
+・Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code/
 
-* Services (job queues, cache servers, search engines, etc.)
+## 今後実装したい機能
+<ul>
+  <li>デザイン</li>
+</ul>
 
-* Deployment instructions
 
-* ...
+## デモ動画
+・準備中
+
+
+## デモ画像①
+・準備中
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|comment_id|integer|
+|name|string|
+|age|string|
+|text|string|
+### Association
+- belongs_to :user
+
+## Licence
+Copyright YOU ARE 2020.
