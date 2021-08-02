@@ -1,5 +1,5 @@
 %Header.Main-Header
-  = image_tag '/assets/7.jpg', alt: '説明画像', height: '120px', width: '40%', class: 'image-first' 
+  = link_to image_tag '/assets/7.jpg', alt: '説明画像', class: 'image-first'
   .Head-content
     .My-content 
       = link_to "MY PAGE", message_path(current_user.id)
