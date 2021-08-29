@@ -1,14 +1,15 @@
 %Header.Main-Header
   = link_to image_tag '/assets/7.jpg', alt: '説明画像', class: 'image-first'
+  .Head-content  
+    .Content
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
+    .My-content 
+      = link_to "TOP", messages_path
 .Header 
   .Name
     ようこそ！
     = current_user.name
     さんログイン中
-  .Content
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'Button-out'
-  .My-content 
-    = link_to "TOP", messages_path
 .Main
   - @message.each do |message|
     .Mani__image-place
